@@ -5,12 +5,15 @@ const baseURL = axios.create({
 });
 
 export const fetchAllArticles = async (topic) => {
-  let endpoint = topic ? `/articles?topic=${topic}` : "/articles";
-  const { data } = await baseURL.get(endpoint);
+  const { data } = await baseURL.get("/articles", {
+    params: {
+      topic,
+    },
+  });
   return data.articles;
 };
 
 export const fetchAllTopics = async () => {
   const { data } = await baseURL.get("/topics");
   return data.topics;
-}
+};
