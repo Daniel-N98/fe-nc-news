@@ -1,28 +1,23 @@
 import { useEffect, useState } from "react";
 import ArticlePreview from "./ArticlePreview";
-import Loading from "./Loading";
-import { fetchAllArticles } from "./resources/utilities/requests";
+import { fetchAllArticles } from "./utilities/requests";
 import "./style/articles.css";
+import { indicateLoading } from "./utilities/utilityFunctions";
 
-export default function ArticlesList() {
+export default function ArticlesList({ topic }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    fetchAllArticles().then((articles) => {
+    fetchAllArticles(topic).then((articles) => {
       setIsLoading(false);
       setArticles(articles);
     });
-  }, []);
+  }, [topic]);
 
   if (isLoading) {
-    return (
-      <div className="flex flex-ali-center flex-column">
-        <h2 className="text-center">Loading...</h2>
-        <Loading className="loading-icon" />
-      </div>
-    );
+    return indicateLoading();
   }
   return (
     <section className="articles-list">
