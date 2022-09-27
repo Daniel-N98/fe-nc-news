@@ -21,7 +21,8 @@ export default function Topics() {
   }
 
   return (
-    <section id="topics-list">
+    <section id="topics-list" className="text-center">
+      <h1>Select a topic</h1>
       <ul id="topics-list" className="flex">
         {topics.map((topic) => {
           return (
