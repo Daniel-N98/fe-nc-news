@@ -1,0 +1,36 @@
+header {
+  background-color: #003060;
+  height: 70px;
+}
+
+header #wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+
+  padding: 20px;
+  margin: 0 auto;
+}
+
+header h1 {
+  color: white;
+}
+
+header h1 span {
+  color: red;
+}
+
+@media only screen and (max-width: 640px) {
+  header #wrapper {
+    width: 100%;
+    padding: 20px 15%;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  header nav {
+    margin-top: 5px;
+  }
+}
