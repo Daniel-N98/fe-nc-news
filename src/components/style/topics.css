@@ -1,0 +1,14 @@
+#topics-list {
+  padding: 15px 50px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.links {
+  text-transform: uppercase;
+}
+
+#topics-list button {
+  background-color: #055C9D;
+  border: 2px solid #003060;
+}
