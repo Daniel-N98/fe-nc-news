@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticlePreview from "./ArticlePreview";
 import Loading from "./Loading";
+import { fetchAllArticles } from "./resources/utilities/requests";
 import "./style/articles.css";
 
 export default function ArticlesList() {
@@ -9,12 +10,10 @@ export default function ArticlesList() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://nc-news-daniel.herokuapp.com/api/articles")
-      .then((response) => response.json())
-      .then((data) => {
-        setIsLoading(false);
-        setArticles(data.articles);
-      });
+    fetchAllArticles().then((articles) => {
+      setIsLoading(false);
+      setArticles(articles);
+    });
   }, []);
 
   if (isLoading) {
