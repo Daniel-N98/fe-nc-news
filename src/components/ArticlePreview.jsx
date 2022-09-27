@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./style/articles.css";
 
 export default function ArticlePreview({ article }) {
@@ -7,7 +8,9 @@ export default function ArticlePreview({ article }) {
       <div className="article-info flex">
         <p>Likes: {article.votes}</p>
         <p>Comments: {article.comment_count}</p>
-        <button>View article</button>
+        <button>
+          <Link to={`/articles/${article.article_id}`}>View article</Link>
+        </button>
       </div>
     </div>
   );
