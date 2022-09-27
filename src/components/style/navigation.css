@@ -1,0 +1,19 @@
+#burger-menu {
+  display: none;
+}
+
+#nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover {
+  text-decoration: underline 3px;
+}

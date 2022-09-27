@@ -1,0 +1,37 @@
+.article {
+  min-height: 100px;
+  
+  padding-top: 10px;
+  margin: 15px auto;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #055C9D;
+  color: lightcyan;
+
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.articles-list {
+  padding: 35px 30px;
+}
+
+.article h3 {
+  margin-top: 5px;
+}
+
+.article-info {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  background-color: #003060;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media only screen and (max-width: 640px) { 
+  .article h3 {
+    font-size: 15px;
+  }
+}
