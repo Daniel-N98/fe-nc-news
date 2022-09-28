@@ -6,13 +6,18 @@ import { updateArticleVotes } from "./utilities/requests";
 export default function Article({ article, setArticle }) {
   const dateCreated = new Date(article.created_at);
   const [hasVoted, setHasVoted] = useState(false);
+  const [localVote, setLocalVote] = useState(0);
 
   const handleVote = () => {
     if (!hasVoted) {
-      updateArticleVotes(article.article_id, 1).catch(() => {
-        setHasVoted(false);
-      });
       setHasVoted(true);
+      setLocalVote(1);
+      updateArticleVotes(article.article_id)
+        .then(() => {})
+        .catch((error) => {
+          setHasVoted(false);
+          setLocalVote(0);
+        });
     }
   };
 
@@ -34,8 +39,10 @@ export default function Article({ article, setArticle }) {
       </ul>
       <section id="like-section" className="flex flex-ali-center">
         <span onClick={() => handleVote()}>
-          <LikeButton fill={hasVoted ? "#26abFF" : "#FFF"}>Vote</LikeButton>
-          <p>{article.votes}</p>
+          <LikeButton fill={localVote === 1 ? "#26abFF" : "#FFF"}>
+            Vote
+          </LikeButton>
+          <p>{article.votes + localVote}</p>
         </span>
       </section>
     </main>

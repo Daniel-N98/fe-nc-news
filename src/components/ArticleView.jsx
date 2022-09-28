@@ -14,7 +14,7 @@ export default function ArticleView() {
     fetchArticleById(article_id).then((article) => {
       setArticle(article);
     });
-  }, [article, article_id]);
+  }, [article_id]);
 
   return (
     <section id="article-view" className="article">

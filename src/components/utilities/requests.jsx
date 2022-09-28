@@ -5,27 +5,43 @@ const baseURL = axios.create({
 });
 
 export const fetchAllArticles = async (topic) => {
-  const { data } = await baseURL.get("/articles", {
-    params: {
-      topic,
-    },
-  });
-  return data.articles;
+  try {
+    const { data } = await baseURL.get("/articles", {
+      params: {
+        topic,
+      },
+    });
+    return data.articles;
+  } catch (error) {
+    return error;
+  }
 };
 
 export const fetchArticleById = async (article_id) => {
-  const { data } = await baseURL.get(`/articles/${article_id}`);
-  return data.article;
+  try {
+    const { data } = await baseURL.get(`/articles/${article_id}`);
+    return data.article;
+  } catch (error) {
+    return error;
+  }
 };
 
 export const fetchAllTopics = async () => {
-  const { data } = await baseURL.get("/topics");
-  return data.topics;
+  try {
+    const { data } = await baseURL.get("/topics");
+    return data.topics;
+  } catch (error) {
+    return error;
+  }
 };
 
-export const updateArticleVotes = async (article_id, votes) => {
-  const { data } = await baseURL.patch(`/articles/${article_id}`, {
-    inc_votes: votes,
-  });
-  return data.article;
+export const updateArticleVotes = async (article_id) => {
+  try {
+    const { data } = await baseURL.patch(`/articles/${article_id}`, {
+      inc_votes: 1,
+    });
+    return data.article;
+  } catch (error) {
+    return error;
+  }
 };
