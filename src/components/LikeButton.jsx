@@ -1,6 +1,7 @@
-export default function LikeButton({ fill}) {
+export default function LikeButton({ fill }) {
   return (
     <svg
+      aria-label="like button"
       fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"

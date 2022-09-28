@@ -1,0 +1,25 @@
+.comment-card {
+  min-height: 150px;
+  margin: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+div.article {
+  margin: 20px;
+  background-color: #003060;
+}
+
+.comment-details {
+  padding: 5px;
+  margin-top: 30px;
+  border-radius: 20px;
+  color: yellow;
+  background-color: #055c9d;
+}
+
+.comment-details p {
+  margin: 0 35px;
+  display: inline;
+}

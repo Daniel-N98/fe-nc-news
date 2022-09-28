@@ -45,3 +45,12 @@ export const updateArticleVotes = async (article_id) => {
     return error;
   }
 };
+
+export const fetchArticleComments = async (article_id) => {
+  try {
+    const { data } = await baseURL.get(`/articles/${article_id}/comments`);
+    return data.comments;
+  } catch (error) {
+    return error;
+  }
+};
