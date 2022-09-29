@@ -1,11 +1,16 @@
+import { useContext } from "react";
+import userContext from "../contexts/userContext";
 import { postArticleComment } from "./utilities/requests";
 
 export default function PostCommentForm({ setComments, article_id }) {
+  const user = useContext(userContext);
+
   const handleComment = (event) => {
     event.preventDefault();
     const comment = event.target[0];
     const valid = validate(comment);
     if (valid) {
+      valid.username = user;
       comment.classList.add("small-green-border");
       comment.value = "";
       postComment(article_id, valid, setComments);
@@ -36,7 +41,7 @@ function postComment(article_id, comment, setComments) {
       setComments((currentComments) => [
         {
           comment_id: Math.random() * 100,
-          author: "jessjelly",
+          author: comment.username,
           body: comment.body,
           created_at: Date.now(),
           votes: 0,
@@ -53,6 +58,6 @@ function validate(comment) {
     return false;
   }
   comment.classList.remove("small-red-border");
-  const commentObj = { username: "jessjelly", body: comment.value };
+  const commentObj = { body: comment.value };
   return commentObj;
 }
