@@ -35,3 +35,15 @@ button {
   width: 100px;
   height: 25px;
 }
+
+.small-border {
+  border: 2px solid black;
+}
+
+.small-red-border {
+  border: 2px solid red;
+}
+
+.small-green-border {
+  border: 2px solid green;
+}
