@@ -1,12 +1,14 @@
 .comment-card {
   min-height: 150px;
-  margin: 20px;
+  margin: 20px auto !important;
   justify-content: space-between;
   padding: 10px;
   border: 2px solid black;
+  width: 85%;
+  overflow: hidden;
 }
 
-div.article {
+li.article {
   margin: 20px;
   background-color: #003060;
 }
@@ -22,4 +24,9 @@ div.article {
 .comment-details p {
   margin: 0 35px;
   display: inline;
+}
+
+.comment-body {
+  line-height: 25px;
+  margin: 15px 10px 0px 10px;
 }

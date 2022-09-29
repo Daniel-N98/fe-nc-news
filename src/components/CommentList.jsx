@@ -21,14 +21,16 @@ export default function CommentList({ article_id }) {
 
   return (
     <section id="comments-section" className="text-center">
-      <h1>Comments</h1>
-      {comments.length > 0 ? (
-        comments.map((comment) => {
-          return <Comment key={comment.comment_id} comment={comment} />;
-        })
-      ) : (
-        <h2>This article has no comments.. be the first?</h2>
-      )}
+      <h3>Comments ({comments.length})</h3>
+      <ul>
+        {comments.length > 0 ? (
+          comments.map((comment) => {
+            return <Comment key={comment.comment_id} comment={comment} />;
+          })
+        ) : (
+          <h3>This article has no comments.. be the first?</h3>
+        )}
+      </ul>
     </section>
   );
 }
