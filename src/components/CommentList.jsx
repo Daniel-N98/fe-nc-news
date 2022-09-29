@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Comment from "./Comment";
+import PostCommentForm from "./PostCommentForm";
 import { fetchArticleComments } from "./utilities/requests";
 import { indicateLoading } from "./utilities/utilityFunctions";
 
@@ -22,6 +23,7 @@ export default function CommentList({ article_id }) {
   return (
     <section id="comments-section" className="text-center">
       <h3>Comments ({comments.length})</h3>
+      <PostCommentForm setComments={setComments} article_id={article_id} />
       <ul>
         {comments.length > 0 ? (
           comments.map((comment) => {

@@ -22,7 +22,7 @@ export const fetchArticleById = async (article_id) => {
     const { data } = await baseURL.get(`/articles/${article_id}`);
     return data.article;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -50,6 +50,21 @@ export const fetchArticleComments = async (article_id) => {
   try {
     const { data } = await baseURL.get(`/articles/${article_id}/comments`);
     return data.comments;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const postArticleComment = async (article_id, comment) => {
+  try {
+    const result = await baseURL.post(
+      `/articles/${article_id}/comments`,
+      comment,
+      {
+        headers: { "Content-Type": "application/json;charset=UTF-8" },
+      }
+    );
+    return result.comment;
   } catch (error) {
     return error;
   }
