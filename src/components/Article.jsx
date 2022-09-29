@@ -38,11 +38,11 @@ export default function Article({ article, setArticle }) {
         </li>
       </ul>
       <section id="like-section" className="flex flex-ali-center">
-        <span onClick={() => handleVote()}>
+        <span onClick={() => handleVote()} tabIndex={0}>
           <LikeButton fill={localVote === 1 ? "#26abFF" : "#FFF"}>
             Vote
           </LikeButton>
-          <p>{article.votes + localVote}</p>
+          <p>{article.votes + localVote || 0}</p>
         </span>
       </section>
     </main>
