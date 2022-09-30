@@ -23,7 +23,7 @@ export default function ArticleView() {
         setIsLoading(false);
       })
       .catch(() => {
-        setError(<ErrorScreen type={"article"} />);
+        setError(<ErrorScreen number={2} />);
         setIsLoading(false);
       });
   }, [article_id]);

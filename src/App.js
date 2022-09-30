@@ -23,7 +23,8 @@ function App() {
           <Route path="/topics" element={<Topics />} />
           <Route path="/topic/:topic/articles" element={<TopicArticles />} />
           <Route path="/articles/:article_id" element={<ArticleView />} />
-          <Route path="*" element={<ErrorScreen type={"page"} />} />
+          <Route path="/topics/*" element={<ErrorScreen number={1} />} />
+          <Route path="/*" element={<ErrorScreen number={0} />} />
         </Routes>
       </div>
     </UserContext.Provider>

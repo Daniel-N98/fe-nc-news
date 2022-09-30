@@ -23,7 +23,7 @@ export default function ArticlesList({ topic }) {
       })
       .catch(() => {
         setIsLoading(false);
-        setError(<ErrorScreen type={"topic"} />);
+        setError(<ErrorScreen number={1} />);
       });
   }, [topic, sortBy, orderBy]);
 
