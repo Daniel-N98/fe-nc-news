@@ -25,7 +25,7 @@ export default function ArticlesList({ topic, limit }) {
         setIsLoading(false);
         setError(<ErrorScreen number={1} />);
       });
-  }, [topic, sortBy, orderBy]);
+  }, [topic, sortBy, orderBy, limit]);
 
   if (error) {
     return error;

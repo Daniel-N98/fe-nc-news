@@ -3,7 +3,7 @@ import LikeButton from "./LikeButton";
 import "./style/articleView.css";
 import { updateArticleVotes } from "./utilities/requests";
 
-export default function Article({ article, setArticle }) {
+export default function Article({ article }) {
   const dateCreated = new Date(article.created_at);
   const [hasVoted, setHasVoted] = useState(false);
   const [localVote, setLocalVote] = useState(0);
