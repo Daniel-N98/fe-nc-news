@@ -4,9 +4,9 @@ const baseURL = axios.create({
   baseURL: "https://nc-news-daniel.herokuapp.com/api",
 });
 
-export const fetchAllArticles = async (topic) => {
+export const fetchAllArticles = async (topic, query) => {
   try {
-    const { data } = await baseURL.get("/articles", {
+    const { data } = await baseURL.get(`/articles${query}`, {
       params: {
         topic,
       },
