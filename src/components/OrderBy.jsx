@@ -13,10 +13,10 @@ export default function OrderBy({ orderBy, setOrderBy }) {
       <option value="none" defaultChecked hidden>
         {orderBy.toLowerCase()}ending
       </option>
+      <option value="DESC">Descending</option>
       <option value="ASC" defaultChecked>
         Ascending
       </option>
-      <option value="DESC">Descending</option>
     </select>
   );
 }

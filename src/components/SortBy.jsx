@@ -13,11 +13,9 @@ export default function SortBy({ sortBy, setSortBy }) {
       <option value="none" defaultChecked hidden>
         {sortBy.replaceAll("_", " ")}
       </option>
+      <option value="votes" defaultChecked>Votes</option>
       <option value="created_at">Date</option>
       <option value="comment_count">Comment count</option>
-      <option value="votes" defaultChecked>
-        Votes
-      </option>
     </select>
   );
 }

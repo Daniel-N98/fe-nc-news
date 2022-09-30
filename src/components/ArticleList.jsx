@@ -14,7 +14,7 @@ export default function ArticlesList({ topic }) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchAllArticles(topic, `?sort_by=${sortBy}&order=${orderBy}`).then(
+    fetchAllArticles(topic, sortBy, orderBy).then(
       (sortedArticles) => {
         setArticles(sortedArticles);
         setIsLoading(false);
@@ -25,7 +25,7 @@ export default function ArticlesList({ topic }) {
   if (isLoading) {
     return indicateLoading();
   }
-  
+
   return (
     <section className="articles-list">
       <section id="sort-options" className="flex">
