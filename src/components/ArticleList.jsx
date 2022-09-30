@@ -7,7 +7,7 @@ import SortBy from "./SortBy";
 import OrderBy from "./OrderBy";
 import ErrorScreen from "./ErrorScreen";
 
-export default function ArticlesList({ topic }) {
+export default function ArticlesList({ topic, limit }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [sortBy, setSortBy] = useState("votes");
@@ -16,7 +16,7 @@ export default function ArticlesList({ topic }) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchAllArticles(topic, sortBy, orderBy)
+    fetchAllArticles(topic, sortBy, orderBy, limit)
       .then((sortedArticles) => {
         setArticles(sortedArticles);
         setIsLoading(false);
