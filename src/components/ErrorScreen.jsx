@@ -6,8 +6,8 @@ export default function ErrorScreen({type}) {
     <section id="error-screen" className="text-center article">
       <h1>Whoops!! Nothing is here..</h1>
       <p>It seems you've stumbled across a non-existent {type}...</p>
-      <Link to={`/${type}`}>
-        <span>Click to return to the {type} page</span>
+      <Link to={`/home`}>
+        <span>Click to return to the home page</span>
       </Link>
     </section>
   );
