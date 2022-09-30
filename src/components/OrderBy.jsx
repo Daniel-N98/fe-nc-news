@@ -10,7 +10,7 @@ export default function OrderBy({ orderBy, setOrderBy }) {
       className="small-border select-option"
       onChange={(event) => handleChange(event)}
     >
-      <option value="none" hidden selected>
+      <option value="none" defaultChecked hidden>
         {orderBy.toLowerCase()}ending
       </option>
       <option value="ASC" defaultChecked>

@@ -10,7 +10,7 @@ export default function SortBy({ sortBy, setSortBy }) {
       className="small-border select-option"
       onChange={(event) => handleChange(event)}
     >
-      <option value="none" selected hidden>
+      <option value="none" defaultChecked hidden>
         {sortBy.replaceAll("_", " ")}
       </option>
       <option value="created_at">Date</option>
