@@ -9,7 +9,7 @@ export default function Comment({ comment, setComments }) {
   const handleDelete = () => {
     setComments((currentComments) =>
       currentComments.filter(
-        (currentComment) => currentComment.comment_id != comment.comment_id
+        (currentComment) => currentComment.comment_id !== comment.comment_id
       )
     );
     deleteArticleComment(comment.comment_id).catch((error) => {
