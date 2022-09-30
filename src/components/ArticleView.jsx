@@ -4,18 +4,37 @@ import Article from "./Article";
 import { fetchArticleById } from "./utilities/requests";
 import "./style/articleView.css";
 import CommentList from "./CommentList";
+import ErrorScreen from "./ErrorScreen";
+import { indicateLoading } from "./utilities/utilityFunctions";
 
 export default function ArticleView() {
   const [article, setArticle] = useState([]);
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const { article_id } = useParams();
   useEffect(() => {
-    fetchArticleById(article_id).then((article) => {
-      setArticle(article);
-    });
+    setIsLoading(true);
+    fetchArticleById(article_id)
+      .then((article) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setError(<ErrorScreen type={"article"} />);
+        setIsLoading(false);
+      });
   }, [article_id]);
+
+  if (isLoading) {
+    return indicateLoading();
+  }
+
+  if (error) {
+    return error;
+  }
 
   return (
     <section>

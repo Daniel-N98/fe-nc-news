@@ -10,12 +10,12 @@ export const fetchAllArticles = async (topic, sortBy, orderBy) => {
       params: {
         topic,
         sort_by: sortBy,
-        order: orderBy
+        order: orderBy,
       },
     });
     return data.articles;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -78,4 +78,4 @@ export const deleteArticleComment = async (comment_id) => {
   } catch (error) {
     throw error;
   }
-}
+};

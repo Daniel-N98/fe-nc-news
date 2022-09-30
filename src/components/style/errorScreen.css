@@ -1,0 +1,19 @@
+#error-screen {
+  padding: 20px;
+  margin: 35px;
+  min-height: 130px;
+}
+
+#error-screen h1 {
+  color: black;
+}
+
+#error-screen p {
+  color: lightgoldenrodyellow;
+  margin: 20px 0;
+}
+
+#error-screen span {
+  color: black;
+  text-decoration: underline;
+}

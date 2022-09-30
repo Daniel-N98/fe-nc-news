@@ -27,7 +27,13 @@ export default function CommentList({ article_id }) {
       <ul>
         {comments.length > 0 ? (
           comments.map((comment) => {
-            return <Comment key={comment.comment_id} comment={comment} setComments={setComments} />;
+            return (
+              <Comment
+                key={comment.comment_id}
+                comment={comment}
+                setComments={setComments}
+              />
+            );
           })
         ) : (
           <h3>This article has no comments.. be the first?</h3>
