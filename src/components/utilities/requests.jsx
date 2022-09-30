@@ -71,3 +71,11 @@ export const postArticleComment = async (article_id, comment) => {
     return error;
   }
 };
+
+export const deleteArticleComment = async (comment_id) => {
+  try {
+    await baseURL.delete(`/comments/${comment_id}`);
+  } catch (error) {
+    throw error;
+  }
+}
