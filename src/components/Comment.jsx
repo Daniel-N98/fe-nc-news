@@ -26,7 +26,7 @@ export default function Comment({ comment, setComments }) {
         <p>{` [${dateCreated.getDate()}/${dateCreated.getMonth()}/${dateCreated.getUTCFullYear()}]`}</p>
       </div>
       {user === comment.author ? (
-        <button id="delete-comment-btn" onClick={() => handleDelete()}>
+        <button id="delete-comment-btn" onClick={handleDelete}>
           Delete
         </button>
       ) : (
